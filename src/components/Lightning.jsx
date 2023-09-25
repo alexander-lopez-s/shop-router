@@ -1,44 +1,44 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import SunglassesItem from "./SunglassesItem";
+import LightningItem from "./LightningItem";
 import Loading from "./Loading";
 
 
 const Lightning = () => {
   const [loading, setLoading] = useState(true);
-  const [sunglasses, setSunglasses] = useState([]);
+  const [lightning, setLightning] = useState([]);
   const [error, setError] = useState("");
   useEffect(() => {
-    const fetchSunglasses = async () => {
+    const fetchLightning = async () => {
       try {
         const response = await axios.get(
-          "https://dummyjson.com/products/category/sunglasses"
+          "https://dummyjson.com/products/category/lighting"
         );
         if (response.status === 200) {
-          setSunglasses(response.data.products);
+          setLightning(response.data.products);
           setError("");
         } else {
           setError("Failed, try again!");
         }
       } catch (error) {
-        console.error("Error fetching sunglasses data:", error);
-        setError("Error fetching sunglasses data");
+        console.error("Error fetching lightning data:", error);
+        setError("Error fetching lightning data");
       } finally {
         setLoading(false);
       }
     };
-    fetchSunglasses();
+    fetchLightning();
   }, []);
 
   return (
     <div>
-      <h2 className="title">Neuwest sunglasses</h2>
+      <h2 className="title">Trendy lights</h2>
       {loading ? (
         <Loading />
       ) : error ? (
         <p>{error}</p>
       ) : (
-        <SunglassesItem data={sunglasses} />
+        <LightningItem data={lightning} />
       )}
     </div>
   );

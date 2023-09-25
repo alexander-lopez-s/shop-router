@@ -1,6 +1,10 @@
+import notFound from "../assets/notfound.png";
+
 const NoPage = () => {
     return (
-      <div>NoPage</div>
+      <div className="not-found-container">
+        <img src={notFound} alt="not found"/>
+      </div>
     )
   }
   

@@ -1,9 +1,10 @@
 import "../App.css";
+import loading from "../assets/loading.gif"
 
 const Loading = () => {
     return (
         <div className="loading">
-            <p>Loading</p>
+            <img src={loading}/>
         </div>
     )
 }
