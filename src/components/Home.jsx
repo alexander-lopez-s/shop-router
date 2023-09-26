@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="home">
       <img alt="logo" src={logo} className="logo" />
-      <h1>Welcome to CVS Florida Store</h1>
+      <h1>Welcome to Las Vegas Furniture Store</h1>
       <p>Explore a wide range of products at affordable prices.</p>
       <section className="store-info">
         <h2>Visit us!</h2>
